@@ -1,7 +1,8 @@
 ---
 # tasks file for etcdefaults
 
-- name: Configure /etc/default/acpit
+- name: Configure /etc/default/acpid
   template:
     src: 'etc/default/acpid.j2'
     dest: '/etc/default/acpid'
+    

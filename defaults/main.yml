@@ -1,8 +1,12 @@
 ---
 # defaults file for etcdefaults
 
+system
+
 etcdefaults:
   acpid:
     options: ''
     modules: ''
+  anacron:
+    run_on_battery_power: 'no'
     
