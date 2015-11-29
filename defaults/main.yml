@@ -1,0 +1,8 @@
+---
+# defaults file for etcdefaults
+
+etcdefaults:
+  acpid:
+    options: ''
+    modules: ''
+    
