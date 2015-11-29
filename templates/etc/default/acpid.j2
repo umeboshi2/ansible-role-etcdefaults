@@ -2,17 +2,17 @@
 #
 # OPTIONS are appended to the acpid command-line
 #OPTIONS=""
-{% if etcdefaults.acpid.options -%}
-OPTIONS="{{ etcdefaults.acpid.options }}"
+{% if etcdefaults_acpid_options -%}
+OPTIONS="{{ etcdefaults_acpid_options }}"
 {% endif %}
 
-  
+
 # Linux kernel modules to load before starting acpid
 #
 # MODULES is a space separated list of modules to load, or "all" to load all
 # acpi drivers, or commented out to load no module
 #MODULES="battery ac processor button fan thermal video"
 #MODULES="all"
-{% if etcdefaults.acpid.modules -%}
-MODULES="{{ etcdefaults.acpid.modules }}"
+{% if etcdefaults_acpid_modules -%}
+MODULES="{{ etcdefaults_acpid_modules }}"
 {% endif %}

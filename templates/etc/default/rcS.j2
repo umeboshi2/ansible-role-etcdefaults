@@ -1,0 +1,39 @@
+#
+# /etc/default/rcS
+#
+# Default settings for the scripts in /etc/rcS.d/
+#
+# For information about these variables see the rcS(5) manual page.
+#
+# This file belongs to the "initscripts" package.
+
+# delete files in /tmp during boot older than x days.
+# '0' means always, -1 or 'infinite' disables the feature
+#TMPTIME=0
+{% if etcdefaults_rcsys_tmptime %}
+TMPTIME={{ etcdefaults_rcsys_tmptime }}
+{% endif %}
+
+# spawn sulogin during boot, continue normal boot if not used in 30 seconds
+#SULOGIN=no
+{% if etcdefaults_rcsys_sulogin %}
+SULOGIN={{ etcdefaults_rcsys_sulogin }}
+{% endif %}
+
+# do not allow users to log in until the boot has completed
+#DELAYLOGIN=no
+{% if etcdefaults_rcsys_delaylogin %}
+DELAYLOGIN={{ etcdefaults_rcsys_delaylogin }}
+{% endif %}
+
+# be more verbose during the boot process
+#VERBOSE=no
+{% if etcdefaults_rcsys_verbose %}
+VERBOSE={{ etcdefaults_rcsys_verbose }}
+{% endif %}
+
+# automatically repair filesystems with inconsistencies during boot
+#FSCKFIX=no
+{% if etcdefaults_rcsys_fsckfix %}
+FSCKFIX={{ etcdefaults_rcsys_fsckfix }}
+{% endif %}

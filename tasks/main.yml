@@ -1,8 +1,31 @@
 ---
 # tasks file for etcdefaults
 
-- name: Configure /etc/default/acpid
+- name: Configure /etc/default files
   template:
-    src: 'etc/default/acpid.j2'
-    dest: '/etc/default/acpid'
-    
+    src: 'etc/default/{{ item }}.j2'
+    dest: '/etc/default/{{ item }}'
+  with_items:
+    - acpid
+    - anacron
+    - bluetooth
+    - bsdmainutils
+    - console-setup
+    - crda
+    - cron
+    - dbus
+    - devpts
+    - exim4
+    - grub
+    - halt
+    - hwclock
+    - keyboard
+    #- locale
+    - networking
+    - nfs-common
+    - nss
+    - rcS
+    - rsyslog
+    - tmpfs
+    # use adduser for this
+    - useradd
