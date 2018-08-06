@@ -2,22 +2,22 @@
 
 # Consult the console-setup(5) manual page.
 
-ACTIVE_CONSOLES="{{ etcdefaults.console_setup.active_consoles }}"
+ACTIVE_CONSOLES="{{ combined_etcdefaults.console_setup.active_consoles }}"
 
-CHARMAP="{{ etcdefaults.console_setup.charmap }}"
+CHARMAP="{{ combined_etcdefaults.console_setup.charmap }}"
 
-CODESET="{{ etcdefaults.console_setup.codeset }}"
-FONTFACE="{{ etcdefaults.console_setup.fontface }}"
-FONTSIZE="{{ etcdefaults.console_setup.fontsize }}"
+CODESET="{{ combined_etcdefaults.console_setup.codeset }}"
+FONTFACE="{{ combined_etcdefaults.console_setup.fontface }}"
+FONTSIZE="{{ combined_etcdefaults.console_setup.fontsize }}"
 
-{% if etcdefaults.console_setup.videomode %}
-VIDEOMODE="{{ etcdefaults.console_setup.videomode }}"
+{% if combined_etcdefaults.console_setup.videomode %}
+VIDEOMODE="{{ combined_etcdefaults.console_setup.videomode }}"
 {% else %}
 VIDEOMODE=
 {% endif %}
 
 # The following is an example how to use a braille font
 # FONT='lat9w-08.psf.gz brl-8x8.psf'
-{% if etcdefaults.console_setup.font %}
-FONT="{{ etcdefaults.console_setup.font }}"
+{% if combined_etcdefaults.console_setup.font %}
+FONT="{{ combined_etcdefaults.console_setup.font }}"
 {% endif %}

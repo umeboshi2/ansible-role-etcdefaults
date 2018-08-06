@@ -8,8 +8,8 @@
 # legislature. See `/usr/share/zoneinfo/zone.tab' for a table of timezone
 # descriptions containing ISO/IEC 3166-1 alpha2 country codes.
 
-{% if etcdefaults.crda.regdomain %}
-REGDOMAIN="{{ etcdefaults.crda.regdomain }}"
+{% if combined_etcdefaults.crda.regdomain %}
+REGDOMAIN="{{ combined_etcdefaults.crda.regdomain }}"
 {% else %}
 REGDOMAIN=
 {% endif %}

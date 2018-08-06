@@ -3,48 +3,48 @@
 # For full documentation of the options in this file, see:
 #   info -f grub -n 'Simple configuration'
 
-GRUB_DEFAULT={{ etcdefaults.grub.default }}
-GRUB_TIMEOUT={{ etcdefaults.grub.timeout }}
-GRUB_DISTRIBUTOR={{ etcdefaults.grub.distributor }}
-GRUB_CMDLINE_LINUX_DEFAULT="{{ etcdefaults.grub.cmdline_linux_default }}"
-GRUB_CMDLINE_LINUX="{{ etcdefaults.grub.cmdline_linux }}"
+GRUB_DEFAULT={{ combined_etcdefaults.grub.default }}
+GRUB_TIMEOUT={{ combined_etcdefaults.grub.timeout }}
+GRUB_DISTRIBUTOR={{ combined_etcdefaults.grub.distributor }}
+GRUB_CMDLINE_LINUX_DEFAULT="{{ combined_etcdefaults.grub.cmdline_linux_default }}"
+GRUB_CMDLINE_LINUX="{{ combined_etcdefaults.grub.cmdline_linux }}"
 
 # Uncomment to enable BadRAM filtering, modify to suit your needs
 # This works with Linux (no patch required) and with any kernel that obtains
 # the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
 #GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
-{% if etcdefaults.grub.badram %}
-GRUB_BADRAM="{{ etcdefaults.grub.badram }}"
+{% if combined_etcdefaults.grub.badram %}
+GRUB_BADRAM="{{ combined_etcdefaults.grub.badram }}"
 {% endif %}
 
 # Uncomment to disable graphical terminal (grub-pc only)
 #GRUB_TERMINAL=console
-{% if etcdefaults.grub.terminal %}
-GRUB_TERMINAL="{{ etcdefaults.grub.terminal }}"
+{% if combined_etcdefaults.grub.terminal %}
+GRUB_TERMINAL="{{ combined_etcdefaults.grub.terminal }}"
 {% endif %}
 
 # The resolution used on graphical terminal
 # note that you can use only modes which your graphic card supports via VBE
 # you can see them in real GRUB with the command `vbeinfo'
 #GRUB_GFXMODE=640x480
-{% if etcdefaults.grub.gfxmode %}
-GRUB_GFXMODE="{{ etcdefaults.grub.gfxmode }}"
+{% if combined_etcdefaults.grub.gfxmode %}
+GRUB_GFXMODE="{{ combined_etcdefaults.grub.gfxmode }}"
 {% endif %}
 
 # Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
 #GRUB_DISABLE_LINUX_UUID=true
-{% if etcdefaults.grub.disable_linux_uuid %}
-GRUB_DISABLE_LINUX_UUID="{{ etcdefaults.grub.disable_linux_uuid }}"
+{% if combined_etcdefaults.grub.disable_linux_uuid %}
+GRUB_DISABLE_LINUX_UUID="{{ combined_etcdefaults.grub.disable_linux_uuid }}"
 {% endif %}
 
 # Uncomment to disable generation of recovery mode menu entries
 #GRUB_DISABLE_RECOVERY="true"
-{% if etcdefaults.grub.disable_recovery %}
-GRUB_DISABLE_RECOVERY="{{ etcdefaults.grub.disable_recovery }}"
+{% if combined_etcdefaults.grub.disable_recovery %}
+GRUB_DISABLE_RECOVERY="{{ combined_etcdefaults.grub.disable_recovery }}"
 {% endif %}
 
 # Uncomment to get a beep at grub start
 #GRUB_INIT_TUNE="480 440 1"
-{% if etcdefaults.grub.init_tune %}
-GRUB_INIT_TUNE="{{ etcdefaults.grub.init_tune }}"
+{% if combined_etcdefaults.grub.init_tune %}
+GRUB_INIT_TUNE="{{ combined_etcdefaults.grub.init_tune }}"
 {% endif %}

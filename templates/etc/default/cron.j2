@@ -7,7 +7,7 @@
 #
 # This has no effect on tasks running under cron; their environment can
 # only be changed via PAM or from within the crontab; see crontab(5).
-READ_ENV="{{ etcdefaults.cron.read_env }}"
+READ_ENV="{{ combined_etcdefaults.cron.read_env }}"
 
 # Extra options for cron, see cron(8)
 #
@@ -25,7 +25,7 @@ READ_ENV="{{ etcdefaults.cron.read_env }}"
 #   8   log the process identifier of child process (in all logs)
 #
 #EXTRA_OPTS=""
-{% if etcdefaults.cron.extra_opts %}
-EXTRA_OPTS="{{ etcdefaults.cron.extra_opts }}"
+{% if combined_etcdefaults.cron.extra_opts %}
+EXTRA_OPTS="{{ combined_etcdefaults.cron.extra_opts }}"
 {% endif %}
 

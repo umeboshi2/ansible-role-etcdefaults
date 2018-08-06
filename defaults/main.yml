@@ -1,7 +1,7 @@
 ---
 # defaults file for etcdefaults
 
-etcdefaults:
+default_etcdefaults:
   #################################
   # /etc/default/acpid
   #################################
