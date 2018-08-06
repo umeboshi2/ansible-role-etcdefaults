@@ -2,6 +2,6 @@
 # ~/calendar files to be checked daily.  Calendar will send them mail
 # to remind them of upcoming events.  See calendar(1) for more details.
 #RUN_DAILY=true
-{% if etcdefaults_bsdmainutils_run_daily %}
-RUN_DAILY={{ etcdefaults_bsdmainutils_run_daily }}
+{% if etcdefaults.bsdmainutils.run_daily %}
+RUN_DAILY={{ etcdefaults.bsdmainutils.run_daily }}
 {% endif %}

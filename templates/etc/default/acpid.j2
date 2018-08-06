@@ -2,8 +2,8 @@
 #
 # OPTIONS are appended to the acpid command-line
 #OPTIONS=""
-{% if etcdefaults_acpid_options -%}
-OPTIONS="{{ etcdefaults_acpid_options }}"
+{% if etcdefaults.acpid.options -%}
+OPTIONS="{{ etcdefaults.acpid.options }}"
 {% endif %}
 
 
@@ -13,6 +13,6 @@ OPTIONS="{{ etcdefaults_acpid_options }}"
 # acpi drivers, or commented out to load no module
 #MODULES="battery ac processor button fan thermal video"
 #MODULES="all"
-{% if etcdefaults_acpid_modules -%}
-MODULES="{{ etcdefaults_acpid_modules }}"
+{% if etcdefaults.acpid.modules -%}
+MODULES="{{ etcdefaults.acpid.modules }}"
 {% endif %}

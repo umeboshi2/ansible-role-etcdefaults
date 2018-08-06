@@ -10,8 +10,8 @@
 #   of the netid.byname map is used AS IS.  The system administrator has
 #   to make sure it is correctly generated.
 #NETID_AUTHORITATIVE=TRUE
-{% if etcdefaults_nss_netid_authoritative %}
-NETID_AUTHORITATIVE={{ etcdefaults_nss_netid_authoritative }}
+{% if etcdefaults.nss.netid_authoritative %}
+NETID_AUTHORITATIVE={{ etcdefaults.nss.netid_authoritative }}
 {% endif %}
 #
 # SERVICES_AUTHORITATIVE
@@ -21,8 +21,8 @@ NETID_AUTHORITATIVE={{ etcdefaults_nss_netid_authoritative }}
 #   primary service names and service aliases.  The system administrator
 #   has to make sure it is correctly generated.
 #SERVICES_AUTHORITATIVE=TRUE
-{% if etcdefaults_nss_services_authoritative %}
-SERVICES_AUTHORITATIVE={{ etcdefaults_nss_services_authoritative }}
+{% if etcdefaults.nss.services_authoritative %}
+SERVICES_AUTHORITATIVE={{ etcdefaults.nss.services_authoritative }}
 {% endif %}
 #
 # SETENT_BATCH_READ
@@ -32,8 +32,8 @@ SERVICES_AUTHORITATIVE={{ etcdefaults_nss_services_authoritative }}
 #  might result into a network communication with the server to get
 #  the next entry.
 #SETENT_BATCH_READ=TRUE
-{% if etcdefaults_nss_setent_batch_read %}
-SETENT_BATCH_READ={{ etcdefaults_nss_setent_batch_read }}
+{% if etcdefaults.nss.setent_batch_read %}
+SETENT_BATCH_READ={{ etcdefaults.nss.setent_batch_read }}
 {% endif %}
 #
 # ADJUNCT_AS_SHADOW
@@ -43,4 +43,4 @@ SETENT_BATCH_READ={{ etcdefaults_nss_setent_batch_read }}
 #  server cannot be trusted to send the passwd.adjuct table only to
 #  privileged clients.  Instead the passwd.adjunct.byname table is
 #  used to synthesize the shadow.byname table if it does not exist.
-ADJUNCT_AS_SHADOW={{ etcdefaults_nss_adjunct_as_shadow }}
+ADJUNCT_AS_SHADOW={{ etcdefaults.nss.adjunct_as_shadow }}

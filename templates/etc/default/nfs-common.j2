@@ -3,7 +3,7 @@
 # for the NEED_ options are "yes" and "no".
 
 # Do you want to start the statd daemon? It is not needed for NFSv4.
-NEED_STATD={{ etcdefaults_nfs_common_need_statd }}
+NEED_STATD={{ etcdefaults.nfs_common.need_statd }}
 
 # Options for rpc.statd.
 #   Should rpc.statd listen on a specific port? This is especially useful
@@ -11,12 +11,12 @@ NEED_STATD={{ etcdefaults_nfs_common_need_statd }}
 #   this variable to a statd argument like: "--port 4000 --outgoing-port 4001".
 #   For more information, see rpc.statd(8) or http://wiki.debian.org/SecuringNFS
 STATDOPTS=
-{% if etcdefaults_nfs_common_statdopts %}
-STATDOPTS="{{ etcdefaults_nfs_common_statdopts }}"
+{% if etcdefaults.nfs_common.statdopts %}
+STATDOPTS="{{ etcdefaults.nfs_common.statdopts }}"
 {% endif %}
 
 # Do you want to start the idmapd daemon? It is only needed for NFSv4.
-NEED_IDMAPD={{ etcdefaults_nfs_common_need_idmapd }}
+NEED_IDMAPD={{ etcdefaults.nfs_common.need_idmapd }}
 
 # Do you want to start the gssd daemon? It is required for Kerberos mounts.
-NEED_GSSD={{ etcdefaults_nfs_common_need_gssd }}
+NEED_GSSD={{ etcdefaults.nfs_common.need_gssd }}
