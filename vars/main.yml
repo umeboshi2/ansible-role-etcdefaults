@@ -1,2 +1,7 @@
 ---
 # vars file for etcdefaults
+
+
+combined_etcdefaults: "{{ default_etcdefaults | combine(etcdefaults, recursive=True) }}"
+
+

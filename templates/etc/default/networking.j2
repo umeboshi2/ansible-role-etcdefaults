@@ -3,18 +3,18 @@
 
 # Set to 'no' to skip interfaces configuration on boot
 #CONFIGURE_INTERFACES=yes
-{% if etcdefaults_networking_configure_interfaces %}
-CONFIGURE_INTERFACES={{ etcdefaults_networking_configure_interfaces }}
+{% if combined_etcdefaults.networking.configure_interfaces %}
+CONFIGURE_INTERFACES={{ combined_etcdefaults.networking.configure_interfaces }}
 {% endif %}
 
 # Don't configure these interfaces. Shell wildcards supported/
 #EXCLUDE_INTERFACES=
-{% if etcdefaults_networking_exclude_interfaces %}
-EXCLUDE_INTERFACES={{ etcdefaults_networking_exclude_interfaces }}
+{% if combined_etcdefaults.networking.exclude_interfaces %}
+EXCLUDE_INTERFACES={{ combined_etcdefaults.networking.exclude_interfaces }}
 {% endif %}
 
 # Set to 'yes' to enable additional verbosity
 #VERBOSE=no
-{% if etcdefaults_networking_verbose %}
-VERBOSE={{ etcdefaults_networking_verbose }}
+{% if combined_etcdefaults.networking.verbose %}
+VERBOSE={{ combined_etcdefaults.networking.verbose }}
 {% endif %}

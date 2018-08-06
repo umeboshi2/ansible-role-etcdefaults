@@ -1,5 +1,5 @@
 # /etc/default/exim4
-EX4DEF_VERSION='{{ etcdefaults_exim4_ex4def_version }}'
+EX4DEF_VERSION='{{ combined_etcdefaults.exim4.ex4def_version }}'
 
 # 'combined' -	 one daemon running queue and listening on SMTP port
 # 'no'       -	 no daemon running the queue
@@ -8,17 +8,17 @@ EX4DEF_VERSION='{{ etcdefaults_exim4_ex4def_version }}'
 # 'nodaemon' - no daemon is started at all.
 # 'queueonly' - only a queue running daemon is started, no SMTP listener.
 # setting this to 'no' will also disable queueruns from /etc/ppp/ip-up.d/exim4
-QUEUERUNNER='{{ etcdefaults_exim4_queuerunner }}'
+QUEUERUNNER='{{ combined_etcdefaults.exim4.queuerunner }}'
 # how often should we run the queue
-QUEUEINTERVAL='{{ etcdefaults_exim4_queueinterval }}'
+QUEUEINTERVAL='{{ combined_etcdefaults.exim4.queueinterval }}'
 # options common to quez-runner and listening daemon
-COMMONOPTIONS='{{ etcdefaults_exim4_commonoptions }}'
+COMMONOPTIONS='{{ combined_etcdefaults.exim4.commonoptions }}'
 # more options for the daemon/process running the queue (applies to the one
 # started in /etc/ppp/ip-up.d/exim4, too.
-QUEUERUNNEROPTIONS='{{ etcdefaults_exim4_queuerunneroptions }}'
+QUEUERUNNEROPTIONS='{{ combined_etcdefaults.exim4.queuerunneroptions }}'
 # special flags given to exim directly after the -q. See exim(8)
-QFLAGS='{{ etcdefaults_exim4_qflags }}'
+QFLAGS='{{ combined_etcdefaults.exim4.qflags }}'
 # Options for the SMTP listener daemon. By default, it is listening on
 # port 25 only. To listen on more ports, it is recommended to use
 # -oX 25:587:10025 -oP /var/run/exim4/exim.pid
-SMTPLISTENEROPTIONS='{{ etcdefaults_exim4_smtplisteneroptions }}'
+SMTPLISTENEROPTIONS='{{ combined_etcdefaults.exim4.smtplisteneroptions }}'

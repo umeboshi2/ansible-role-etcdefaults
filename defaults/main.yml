@@ -1,183 +1,198 @@
 ---
 # defaults file for etcdefaults
 
-#################################
-# /etc/default/acpid
-#################################
-etcdefaults_acpid_options: ''
-etcdefaults_acpid_modules: ''
+default_etcdefaults:
+  #################################
+  # /etc/default/acpid
+  #################################
+  acpid:
+    options: ''
+    modules: ''
+  #################################
+  # /etc/default/anacron
+  #################################
+  anacron:
+    run_on_battery_power: 'no'
 
-#################################
-# /etc/default/anacron
-#################################
-etcdefaults_anacron_run_on_battery_power: 'no'
+  #################################
+  # /etc/default/bluetooth
+  #################################
+  bluetooth:
+    enabled: 1
+    hid2hci_enabled: 0
+    hid2hci_undo: 0
 
-#################################
-# /etc/default/bluetooth
-#################################
-etcdefaults_bluetooth_enabled: 1
-etcdefaults_bluetooth_hid2hci_enabled: 0
-etcdefaults_bluetooth_hid2hci_undo: 0
+  #################################
+  # /etc/default/bsdmainutils
+  #################################
+  # set to 'true' to enable
+  bsdmainutils:
+    run_daily: false
+    #run_daily: '{{ etcdefaults.anacron.run_on_battery_power }}'
 
-#################################
-# /etc/default/bsdmainutils
-#################################
-# set to 'true' to enable
-etcdefaults_bsdmainutils_run_daily: false
-#etcdefaults_bsdmainutils_run_daily: '{{ etcdefaults_anacron_run_on_battery_power }}'
-
-#################################
-# /etc/default/console-setup
-#################################
-etcdefaults_console_setup_active_consoles: '/dev/tty[1-6]'
-etcdefaults_console_setup_charmap: 'UTF-8'
-etcdefaults_console_setup_codeset: 'Lat15'
-etcdefaults_console_setup_fontface: 'Fixed'
-etcdefaults_console_setup_fontsize: '8x16'
-etcdefaults_console_setup_videomode: ''
-
-# The following is an example how to use a braille font
-# FONT='lat9w-08.psf.gz brl-8x8.psf'
-etcdefaults_console_setup_font: ''
-
-
-#################################
-# /etc/default/crda
-#################################
-etcdefaults_crda_regdomain: ''
+  #################################
+  # /etc/default/console-setup
+  #################################
+  console_setup:
+    active_consoles: '/dev/tty[1-6]'
+    charmap: 'UTF-8'
+    codeset: 'Lat15'
+    fontface: 'Fixed'
+    fontsize: '8x16'
+    videomode: ''
+    # The following is an example how to use a braille font
+    # FONT='lat9w-08.psf.gz brl-8x8.psf'
+    font: ''
 
 
-#################################
-# /etc/default/cron
-#################################
-etcdefaults_cron_read_env: 'yes'
-etcdefaults_cron_extra_opts: ''
+  #################################
+  # /etc/default/crda
+  #################################
+  crda:
+    regdomain: ''
 
-#################################
-# /etc/default/dbus
-#################################
-etcdefaults_dbus_params: ''
+  #################################
+  # /etc/default/cron
+  #################################
+  cron:
+    read_env: 'yes'
+    extra_opts: ''
 
-#################################
-# /etc/default/devpts
-#################################
-etcdefaults_devpts_ttygrp: 5
-etcdefaults_devpts_ttymode: 620
+  #################################
+  # /etc/default/dbus
+  #################################
+  dbus:
+    params: ''
 
-
-#################################
-# /etc/default/exim4
-#################################
-etcdefaults_exim4_ex4def_version: ''
-etcdefaults_exim4_queuerunner: 'combined'
-etcdefaults_exim4_queueinterval: '30m'
-etcdefaults_exim4_commonoptions: ''
-etcdefaults_exim4_queuerunneroptions: ''
-etcdefaults_exim4_qflags: ''
-etcdefaults_exim4_smtplisteneroptions: ''
+  #################################
+  # /etc/default/devpts
+  #################################
+  devpts:
+    ttygrp: 5
+    ttymode: 620
 
 
-#################################
-# /etc/default/grub
-#################################
-etcdefaults_grub_default: 0
-etcdefaults_grub_timeout: 5
-etcdefaults_grub_distributor: '`lsb_release -i -s 2> /dev/null || echo Debian`'
-etcdefaults_grub_cmdline_linux_default: 'quiet'
-etcdefaults_grub_cmdline_linux: ''
-etcdefaults_grub_badram: ''
-etcdefaults_grub_terminal: ''
-etcdefaults_grub_gfxmode: ''
-etcdefaults_grub_disable_linux_uuid: ''
-etcdefaults_grub_disable_recovery: ''
-etcdefaults_grub_init_tune: ''
-
-#################################
-# /etc/default/halt
-#################################
-etcdefaults_halt_halt: 'poweroff'
-
-#################################
-# /etc/default/hwclock
-#################################
-etcdefaults_hwclock_badyear: ''
-etcdefaults_hwclock_hwclockaccess: ''
-etcdefaults_hwclock_hwclockpars: ''
-etcdefaults_hwclock_hctosys_device: ''
-
-#################################
-# /etc/default/keyboard
-#################################
-etcdefaults_keyboard_xkbmodel: 'pc105'
-etcdefaults_keyboard_xkblayout: 'us'
-etcdefaults_keyboard_xkbvariant: ''
-etcdefaults_keyboard_xkboptions: ''
-etcdefaults_keyboard_backspace: 'guess'
-
-#################################
-# /etc/default/locale
-#################################
-
-#################################
-# /etc/default/networking
-#################################
-
-# set to no to skip default configure
-etcdefaults_networking_configure_interfaces: ''
-
-etcdefaults_networking_exclude_interfaces: ''
-etcdefaults_networking_verbose: ''
+  #################################
+  # /etc/default/exim4
+  #################################
+  exim4:
+    ex4def_version: ''
+    queuerunner: 'combined'
+    queueinterval: '30m'
+    commonoptions: ''
+    queuerunneroptions: ''
+    qflags: ''
+    smtplisteneroptions: ''
 
 
-#################################
-# /etc/default/nfs-common
-#################################
-etcdefaults_nfs_common_need_statd: ''
-etcdefaults_nfs_common_need_idmapd: ''
-etcdefaults_nfs_common_need_gssd: ''
-etcdefaults_nfs_common_statdopts: ''
+  #################################
+  # /etc/default/grub
+  #################################
+  grub:
+    default: 0
+    timeout: 5
+    distributor: '`lsb_release -i -s 2> /dev/null || echo Debian`'
+    cmdline_linux_default: 'quiet'
+    cmdline_linux: ''
+    badram: ''
+    terminal: ''
+    gfxmode: ''
+    disable_linux_uuid: ''
+    disable_recovery: ''
+    init_tune: ''
 
-#################################
-# /etc/default/nss
-#################################
-etcdefaults_nss_netid_authoritative: ''
-etcdefaults_nss_services_authoritative: ''
-etcdefaults_nss_setent_batch_read: ''
-etcdefaults_nss_adjunct_as_shadow: 'TRUE'
+  #################################
+  # /etc/default/halt
+  #################################
+  halt:
+    halt: 'poweroff'
 
-#################################
-# /etc/default/rcS
-#################################
-etcdefaults_rcsys_tmptime: ''
-etcdefaults_rcsys_sulogin: ''
-etcdefaults_rcsys_delaylogin: ''
-etcdefaults_rcsys_verbose: ''
-etcdefaults_rcsys_fsckfix: ''
+  #################################
+  # /etc/default/hwclock
+  #################################
+  hwclock:
+    badyear: ''
+    hwclockaccess: ''
+    hwclockpars: ''
+    hctosys_device: ''
 
-#################################
-# /etc/default/rsyslog
-#################################
-etcdefaults_rsyslog_rsyslogd_options: ''
+  #################################
+  # /etc/default/keyboard
+  #################################
+  keyboard:
+    xkbmodel: 'pc105'
+    xkblayout: 'us'
+    xkbvariant: ''
+    xkboptions: ''
+    backspace: 'guess'
 
-#################################
-# /etc/default/tmpfs
-#################################
-etcdefaults_tmpfs_ramlock: ''
-etcdefaults_tmpfs_ramshm: ''
-etcdefaults_tmpfs_ramtmp: ''
+  #################################
+  # /etc/default/locale
+  #################################
 
-# size limits
-etcdefaults_tmpfs_tmpfs_size: ''
-etcdefaults_tmpfs_run_size: ''
-etcdefaults_tmpfs_lock_size: ''
-etcdefaults_tmpfs_shm_size: ''
-etcdefaults_tmpfs_tmp_size: ''
-
-etcdefaults_tmpfs_tmp_overflow_limit: ''
+  #################################
+  # /etc/default/networking
+  #################################
+  networking:
+    # set to no to skip default configure
+    configure_interfaces: ''
+    exclude_interfaces: ''
+    verbose: ''
 
 
+  #################################
+  # /etc/default/nfs-common
+  #################################
+  nfs_common:
+    need_statd: ''
+    need_idmapd: ''
+    need_gssd: ''
+    statdopts: ''
 
-#################################
-# /etc/default/useradd
-#################################
-etcdefaults_useradd_shell: /bin/sh
+  #################################
+  # /etc/default/nss
+  #################################
+  nss:
+    netid_authoritative: ''
+    services_authoritative: ''
+    setent_batch_read: ''
+    adjunct_as_shadow: 'TRUE'
+
+  #################################
+  # /etc/default/rcS
+  #################################
+  rcsys:
+    tmptime: ''
+    sulogin: ''
+    delaylogin: ''
+    verbose: ''
+    fsckfix: ''
+
+  #################################
+  # /etc/default/rsyslog
+  #################################
+  rsyslog:
+    rsyslogd_options: ''
+
+  #################################
+  # /etc/default/tmpfs
+  #################################
+  tmpfs:
+    ramlock: ''
+    ramshm: ''
+    ramtmp: ''
+    # size limits
+    tmpfs_size: ''
+    run_size: ''
+    lock_size: ''
+    shm_size: ''
+    tmp_size: ''
+    tmp_overflow_limit: ''
+
+
+
+  #################################
+  # /etc/default/useradd
+  #################################
+  useradd:
+    shell: /bin/sh

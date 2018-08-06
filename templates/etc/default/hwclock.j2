@@ -4,28 +4,28 @@
 # years outside the range of 1994-1999.  Set to yes if the hardware is
 # broken or no if working correctly.
 #BADYEAR=no
-{% if etcdefaults_hwclock_badyear %}
-BADYEAR={{ etcdefaults_hwclock_badyear }}
+{% if combined_etcdefaults.hwclock.badyear %}
+BADYEAR={{ combined_etcdefaults.hwclock.badyear }}
 {% endif %}
 
 # Set this to yes if it is possible to access the hardware clock,
 # or no if it is not.
 #HWCLOCKACCESS=yes
-{% if etcdefaults_hwclock_hwclockaccess %}
-HWCLOCKACCESS={{ etcdefaults_hwclock_hwclockaccess }}
+{% if combined_etcdefaults.hwclock.hwclockaccess %}
+HWCLOCKACCESS={{ combined_etcdefaults.hwclock.hwclockaccess }}
 {% endif %}
 
 # Set this to any options you might need to give to hwclock, such
 # as machine hardware clock type for Alphas.
 #HWCLOCKPARS=
-{% if etcdefaults_hwclock_hwclockpars %}
-HWCLOCKPARS={{ etcdefaults_hwclock_hwclockpars }}
+{% if combined_etcdefaults.hwclock.hwclockpars %}
+HWCLOCKPARS={{ combined_etcdefaults.hwclock.hwclockpars }}
 {% endif %}
 
 # Set this to the hardware clock device you want to use, it should
 # probably match the CONFIG_RTC_HCTOSYS_DEVICE kernel config option.
 #HCTOSYS_DEVICE=rtc0
-{% if etcdefaults_hwclock_hctosys_device %}
-HCTOSYS_DEVICE={{ etcdefaults_hwclock_hctosys_device }}
+{% if combined_etcdefaults.hwclock.hctosys_device %}
+HCTOSYS_DEVICE={{ combined_etcdefaults.hwclock.hctosys_device }}
 {% endif %}
 
