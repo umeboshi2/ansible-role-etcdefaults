@@ -1,7 +1,8 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+Set values for the various files in ```/etc/default/``` in debian 
+based systems.
 
 Requirements
 ------------
@@ -11,12 +12,18 @@ Any pre-requisites that may not be covered by Ansible itself or the role should 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Look at the defaults for the variables.  For the variables, the top level
+name is ```etcdefaults```.  The ```default_etcdefaults``` defined 
+in ```defaults/main.yml``` are combined into a ```combined_etcdefaults``` 
+variable.  It would be preferable to be able to redefine ```etcdefaults```,
+but the jinja ```combine`` filter seems to be unable to do this.
+
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+No dependencies.  This is a basic debian role, possibly useful for 
+other debian based distributions.
 
 Example Playbook
 ----------------
