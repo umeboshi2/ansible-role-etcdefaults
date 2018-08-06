@@ -16,7 +16,7 @@ Look at the defaults for the variables.  For the variables, the top level
 name is ```etcdefaults```.  The ```default_etcdefaults``` defined 
 in ```defaults/main.yml``` are combined into a ```combined_etcdefaults``` 
 variable.  It would be preferable to be able to redefine ```etcdefaults```,
-but the jinja ```combine`` filter seems to be unable to do this.
+but the jinja ```combine``` filter seems to be unable to do this.
 
 
 Dependencies
