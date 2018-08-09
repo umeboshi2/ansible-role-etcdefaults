@@ -1,5 +1,30 @@
 ---
 # defaults file for etcdefaults
+etcdefaults_files:
+  - acpid
+  - anacron
+  - bluetooth
+  - bsdmainutils
+  - console-setup
+  - crda
+  - cron
+  - dbus
+  - devpts
+  - exim4
+  - grub
+  - halt
+  - hwclock
+  - keyboard
+  #- locale
+  - networking
+  - nfs-common
+  - nss
+  - rcS
+  - rsyslog
+  - tmpfs
+  # use adduser for this
+  - useradd
+  
 
 default_etcdefaults:
   #################################

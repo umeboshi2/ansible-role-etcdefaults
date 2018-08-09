@@ -1,31 +1,22 @@
 ---
+- name: check /etc/default/{{ item }} exists
+  stat:
+    path: "/etc/default/{{ item }}"
+  register: etcdefaults_files_list
+  with_items: "{{ etcdefaults_files }}"
+
+
+# - name: show etcdefaults_files_list
+#   debug:
+#     msg: "{{ etcdefaults_files_list }}"
+
+    
 # tasks file for etcdefaults
 - name: Configure /etc/default files
   remote_user: root
   template:
-    src: 'etc/default/{{ item }}.j2'
-    dest: '/etc/default/{{ item }}'
-  with_items:
-    - acpid
-    - anacron
-    - bluetooth
-    - bsdmainutils
-    - console-setup
-    - crda
-    - cron
-    - dbus
-    - devpts
-    - exim4
-    - grub
-    - halt
-    - hwclock
-    - keyboard
-    #- locale
-    - networking
-    - nfs-common
-    - nss
-    - rcS
-    - rsyslog
-    - tmpfs
-    # use adduser for this
-    - useradd
+    src: 'etc/default/{{ item.item }}.j2'
+    dest: '/etc/default/{{ item.item }}'
+  loop: "{{ etcdefaults_files_list.results }}"
+  when: item.stat.exists == True
+  
