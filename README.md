@@ -18,6 +18,10 @@ in ```defaults/main.yml``` are combined into a ```combined_etcdefaults```
 variable.  It would be preferable to be able to redefine ```etcdefaults```,
 but the jinja ```combine``` filter seems to be unable to do this.
 
+The ```etcdefaults_files``` variable contains the list of files that are 
+handled by this role.  If the file doesn't exist on the target machine, it 
+will NOT be created.
+
 
 Dependencies
 ------------
@@ -27,6 +31,8 @@ other debian based distributions.
 
 Example Playbook
 ----------------
+
+TODO: make a better example
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
@@ -42,4 +48,4 @@ public domain
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+[Author](https://github.com/umeboshi2)
